@@ -44,6 +44,18 @@ public:
 	int getage() {
 		return m_age;
 	}
+	Worker& operator=(const Worker& copy) {
+        //проверка на самоприсваивание
+        if (this == &copy) {
+            return *this;
+        }
+        m_name = copy.m_name;
+		m_position = copy.m_position;
+		m_age = copy.m_age;
+		m_salary = copy.m_salary;
+        return *this;
+    }
+		
 	void setage(int age) {
 		this->m_age = age;
 	}
@@ -150,7 +162,7 @@ int main() {
 				}
 			}
 
-			// ������� �
+			// Çàäàíèå Á
 			cout << endl;
 			cout << "Task B" << endl;
 			int sal;
@@ -163,10 +175,9 @@ int main() {
 				}
 			}
 
-			// ������� �
+			// Çàäàíèå Â
 			cout << endl;
 			cout << "Task C" << endl;
-			//string pos;
 			cout << "Enter position for sort -> " << " ";
 			cin >> pos;
 
